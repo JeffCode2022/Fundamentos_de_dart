@@ -1,0 +1,74 @@
+{
+    // 🚫 DESACTIVAR TODAS LAS SUGERENCIAS PARA APRENDER SIN TRAMPA
+    
+    // === EDITOR: Sugerencias generales ===
+    "editor.inlineSuggest.enabled": false,
+    "editor.quickSuggestions": {
+        "other": "off",
+        "comments": "off",
+        "strings": "off"
+    },
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.wordBasedSuggestions": "off",
+    "editor.parameterHints.enabled": false,
+    "editor.snippetSuggestions": "none",
+    "editor.tabCompletion": "off",
+    "editor.hover.enabled": false,
+    "editor.suggest.showMethods": false,
+    "editor.suggest.showFunctions": false,
+    "editor.suggest.showVariables": false,
+    "editor.suggest.showClasses": false,
+    "editor.suggest.showKeywords": false,
+    "editor.suggest.showSnippets": false,
+    "editor.suggest.showWords": false,
+    "editor.suggest.showValues": false,
+    "editor.suggest.showModules": false,
+    "editor.suggest.showProperties": false,
+    "editor.suggest.showInterfaces": false,
+    "editor.suggest.showEvents": false,
+    "editor.suggest.showOperators": false,
+    "editor.suggest.showUnits": false,
+    "editor.suggest.showConstants": false,
+    "editor.suggest.showEnums": false,
+    "editor.suggest.showEnumMembers": false,
+    "editor.suggest.showStructs": false,
+    "editor.suggest.showTypeParameters": false,
+    "editor.suggest.showColors": false,
+    "editor.suggest.showFiles": false,
+    "editor.suggest.showReferences": false,
+    "editor.suggest.showFolders": false,
+    "editor.suggest.showConstructors": false,
+    "editor.suggest.showFields": false,
+    "editor.suggest.showIssues": false,
+    "editor.suggest.showUsers": false,
+    "editor.suggest.preview": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.suggest.filterGraceful": false,
+
+    // === DART: Desactivar autocompletado de Dart ===
+    "dart.autoImportCompletions": false,
+    "dart.showTodos": false,
+    "[dart]": {
+        "editor.quickSuggestions": {
+            "other": "off",
+            "comments": "off",
+            "strings": "off"
+        },
+        "editor.formatOnSave": false,
+        "editor.suggest.showWords": false,
+        "editor.suggest.showSnippets": false,
+        "editor.suggest.showKeywords": false
+    },
+
+    // === EXTENSIONES: Desactivar AI y autocompletados ===
+    "github.copilot.enable": {
+        "*": false,
+        "dart": false
+    },
+    "geminicodeassist.enable": false,
+    "geminicodeassist.inlineSuggestion.enable": false,
+    "vsintellicode.modify.editor.suggestSelection": "disabled",
+    "path-autocomplete.triggerOutsideStrings": false,
+    "path-autocomplete.enableFolderTrailingSlash": false
+}

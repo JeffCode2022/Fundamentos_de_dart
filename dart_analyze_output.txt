@@ -1,0 +1,8 @@
+Analyzing dia4_switch_condicionales.dart...
+
+warning - dia4_switch_condicionales.dart:305:19 - Dead code. Try removing the code, or fixing the code before it so that it can be reached. - dead_code
+warning - dia4_switch_condicionales.dart:305:22 - The left operand can't be null, so the right operand is never executed. Try removing the operator and the right operand. - dead_null_aware_expression
+warning - dia4_switch_condicionales.dart:306:20 - The receiver can't be null, so the null-aware operator '?.' is unnecessary. Try replacing the operator '?.' with '.'. - invalid_null_aware_operator
+warning - dia4_switch_condicionales.dart:311:27 - The operand can't be 'null', so the condition is always 'true'. Remove the condition. - unnecessary_null_comparison
+
+4 issues found.
