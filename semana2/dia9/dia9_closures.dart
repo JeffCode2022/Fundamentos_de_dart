@@ -162,10 +162,16 @@ void ejercicio6() {
 
 List<int> aplicarOperacion(List<int> numeros, int Function(int) operacion) {
   // 1. Crear nueva lista vacía: List<int> resultado = [];
+  List<int> resultado = [];
   // 2. Recorrer la lista original
+  for(int numero in numeros){
+    int nuevoValor = operacion(numero);
   // 3. Aplicar operacion() a cada número y agregarlo (.add)
+    resultado.add(nuevoValor);
+  }
+
   // 4. Retornar
-  return []; // Modifica esto
+  return resultado; // Modifica esto
 }
 
 void retoMaquina() {
@@ -173,9 +179,19 @@ void retoMaquina() {
   List<int> datos = [5, 10, 15];
   
   // Imprimir los datos originales
+  print('Datos Oriinales $datos');
   
   // Imprimir procesado: Mitad de los números (n / 2). "Tienes que convertirlo usando ~/ para division entera o cambiar los tipos a double)
   // Nota: Dart no permite double adentro de List<int> si divides, asume n * 10
+
+  var porDiez = aplicarOperacion(datos,(n)=> n * 10);
+  print('Multiplicados por 10: $porDiez');
+
+  var porMitad = aplicarOperacion(datos,(n)=> n ~/ 2);
+  print('Mitades  enteras: $porMitad');
+
+  var porCuadrado  = aplicarOperacion(datos, (n) => n*n);
+  print('Al cuadrado: $porCuadrado');
 }
 
 
