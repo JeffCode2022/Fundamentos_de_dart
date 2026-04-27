@@ -14,7 +14,7 @@
     "editor.parameterHints.enabled": false,
     "editor.snippetSuggestions": "none",
     "editor.tabCompletion": "off",
-    "editor.hover.enabled": false,
+    "editor.hover.enabled": "off",
     "editor.suggest.showMethods": false,
     "editor.suggest.showFunctions": false,
     "editor.suggest.showVariables": false,

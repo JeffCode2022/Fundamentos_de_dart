@@ -55,6 +55,15 @@ import 'dart:io';
 // Caso base: Si n == 0 o n == 1, retorna 1.
 // Crea la función `int factorial(int n)`.
 // Escribe tu función aquí:
+int factorial(int n){
+
+  if(n<=1){
+    return 1;
+  }
+  return n * factorial(n-1);
+
+}
+
 
 
 // ✅ Ejercicio 3: Suma Recursiva
@@ -63,6 +72,13 @@ import 'dart:io';
 // Por ejemplo: sumaRecursiva(4) devolvería 10 (4 + 3 + 2 + 1)
 // Caso base: Si n == 1, retornar 1.
 // Escribe tu función aquí:
+
+int sumaRecursiva(int n){
+  if(n==1){
+    return 1;
+  }
+  return n + sumaRecursiva(n-1);
+}
 
 
 // ✅ Ejercicio 4: Fibonacci Recursivo
@@ -73,6 +89,18 @@ import 'dart:io';
 // Caso recursivo: retorna fibonacci(n - 1) + fibonacci(n - 2).
 // Escribe tu función aquí:
 
+int fibonacci(int n){
+  if(n == 0){
+    return 0;
+  }
+  if(n == 1){
+    return 1;
+  }
+
+  return fibonacci(n-1) + fibonacci(n-2);
+
+}
+
 
 // ✅ Ejercicio 5: Sumar Dígitos de un Número
 // Vas a sumar cada dígito por separado de un número grandote.
@@ -82,6 +110,13 @@ import 'dart:io';
 // Tip: `n % 10` siempre extrae el último número. `n ~/ 10` elimina el último número.
 // Crea `int sumaDigitos(int n)`.
 // Escribe tu función aquí:
+int sumaDigitos(int n){
+  if(n==0){
+    return 0;
+  }
+
+  return  (n % 10) + sumaDigitos(n ~/10);
+}
 
 
 // ✅ Ejercicio 6: Potencia
@@ -89,6 +124,14 @@ import 'dart:io';
 // Si el exponente == 0, retorna 1.
 // Caso recursivo: retorna base * potencia(base, exponente - 1).
 // Escribe tu función aquí:
+int potencia(int base, int exponente){
+  if(exponente == 0){
+    return 1;
+  }
+
+  return base*potencia(base,exponente-1);
+
+}
 
 
 // ✅ Ejercicio 7: Invertir String Recursivo
@@ -98,6 +141,21 @@ import 'dart:io';
 // la recursión de `invertir(...)` pasándole el texto SIN su último carácter.
 // Funciones clave: texto[texto.length - 1], y texto.substring(0, texto.length - 1).
 // Escribe tu función aquí:
+String invertir(String texto){
+  if(texto.isEmpty){
+    return texto;
+  }
+
+  String ultimaLetra = texto[texto.length-1];
+
+  String restoDePalabra = texto.substring(0,texto.length-1);
+
+
+  return ultimaLetra + invertir(restoDePalabra);
+
+
+
+}
 
 
 
@@ -123,18 +181,54 @@ import 'dart:io';
 // ¡Acomoda y confía en el algoritmo! Dentro del main() llama a `hanoi(4, 'A', 'C', 'B');`
 // ============================================
 
+void hanoi(int n, String origen, String destino,String auxiliar){
+  if(n==1){
+    print("Mueve el disco de $origen a $destino");
+    return;
+  }
+  
+  hanoi(n-1,origen, auxiliar, destino);
+  print("Mueve el disco $n de $origen a $destino");
+
+  hanoi(n-1,auxiliar,destino,origen);
+
+}
+
 void retoHanoi() {
   print('\n🧠 === TORRES DE HANOI ===');
   // Llama a tu función hanoi aquí cuando esté lista
-  
+  hanoi(4, 'A', 'C', 'B');
 }
 
 
 // 🚀 FUNCIÓN MAIN
 // Prueba todas tus iteraciones y funciones aquí
+// 🚀 FUNCIÓN MAIN
+// Prueba todas tus iteraciones y funciones aquí
 void main() {
-  print('=== DÍA 10: RECURSIÓN Y EL EXILIO DE LOS BUCLES ===\n');
-  cuentaRegresiva(5);
+  print('=== 🚀 DÍA 10: RECURSIÓN Y EL EXILIO DE LOS BUCLES ===\n');
 
-  // Llama todas tus funciones debajo para probarlas.
+  print('--- Ejercicio 1: Cuenta Regresiva ---');
+  cuentaRegresiva(3);
+
+  print('\n--- Ejercicio 2: Factorial ---');
+  print('Factorial de 5 (5!): ${factorial(5)}'); // Debería dar 120
+
+  print('\n--- Ejercicio 3: Suma Recursiva ---');
+  print('Suma del 1 al 4: ${sumaRecursiva(4)}'); // Debería dar 10
+
+  print('\n--- Ejercicio 4: Fibonacci ---');
+  print('Fibonacci posición 6: ${fibonacci(6)}'); // Debería dar 8
+
+  print('\n--- Ejercicio 5: Sumar Dígitos ---');
+  print('Suma de los dígitos de 9876: ${sumaDigitos(9876)}'); // Debería dar 30
+
+  print('\n--- Ejercicio 6: Potencia ---');
+  print('2 elevado a la 5: ${potencia(2, 5)}'); // Debería dar 32
+
+  print('\n--- Ejercicio 7: Invertir String ---');
+  print('Klyneo invertido: ${invertir("Klyneo")}'); // Debería dar oenylK
+
+  // Reto Final
+  retoHanoi();
 }
