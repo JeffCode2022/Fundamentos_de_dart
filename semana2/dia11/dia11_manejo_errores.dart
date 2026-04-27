@@ -349,7 +349,7 @@ int pedirCantidadSegura(String mensaje){
 
 }
 
-void procesarCompra(int producto,int cantidad ,int stockDisponible){
+void procesarCompra(String producto,int cantidad ,int stockDisponible){
   if(cantidad > stockDisponible){
     throw StockInsuficienteException('Solo quedan $stockDisponible unidades de $producto.');
   }
@@ -389,7 +389,7 @@ void retoTiendaMejorada() {
 
     // Procesar
     procesarCompra(
-      productoSeleccionado as int, 
+      productoSeleccionado, 
       cantidad, 
       inventario[productoSeleccionado]!
     );
