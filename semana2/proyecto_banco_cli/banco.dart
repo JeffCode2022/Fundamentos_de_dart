@@ -50,7 +50,7 @@ class SaldoInsuficienteException implements Exception{
   final String mensaje;
   SaldoInsuficienteException(this.mensaje);
   @override
-  String? toString()=>'SaldoInsuficienteException:$mensaje';
+  String toString() => 'SaldoInsuficienteException: $mensaje';
   
 }
 
@@ -58,7 +58,7 @@ class MontoInvalidoException implements Exception{
   final String mensaje;
   MontoInvalidoException(this.mensaje);
   @override
-  String? toString()=>'MontoInvalidoException:$mensaje';
+  String toString() => 'MontoInvalidoException: $mensaje';
   
 }
 
@@ -66,7 +66,7 @@ class CuentaNoExisteException implements Exception{
   final String mensaje;
   CuentaNoExisteException(this.mensaje);
   @override
-  String? toString()=>'CuentaNoExisteException:$mensaje';
+  String toString() => 'CuentaNoExisteException: $mensaje';
   
 }
 
@@ -141,6 +141,7 @@ void depositar (double monto){
   validarMonto(monto);
   saldo += monto;
   historial.add("💰 Depósito: +$monto. Saldo: $saldo");
+  print('✅ Depósito exitoso...');
 }
 
 
@@ -157,7 +158,8 @@ void retirar(double monto){
     throw SaldoInsuficienteException('Saldo insuficiente. Tu saldo es: \$$saldo');
   }
   saldo -= monto;
-  historial.add("Retiro : -$monto. Saldo:  $saldo");
+  historial.add("Retiro : -S/.$monto. Saldo: S/.$saldo");
+  print('Retiro exitoso de : S/.$monto');
 }
 
 // ── Función 6: Ver Saldo ──
@@ -220,10 +222,9 @@ void mostrarMenu() {
   print('  3. 🏧 Realizar un retiro');
   print('  4. 🔍 Consultar saldo actual');
   print('  5. 📜 Ver historial de movimientos');
-  print('  6. 🔄 Transferencia (Bonus)');
-  print('  7. ❌ Salir del sistema');
+  print('  6. ❌ Salir del sistema');
   print('═' * 40);
-  stdout.write('👉 Seleccione una opción (1-7): ');
+  stdout.write('👉 Seleccione una opción (1-6): ');
 }
 
 
@@ -267,11 +268,11 @@ void main() {
           crearCuenta(nombre);
           break;
         case '2':
-          double m = pedirMontoSeguro('Monto a depositar')
-          depositar(m)
+          double m = pedirMontoSeguro('Monto a depositar');
+          depositar(m);
           break;
         case '3':
-          double m = pedirMontoSeguro('Monto a retirar')
+          double m = pedirMontoSeguro('Monto a retirar');
           retirar(m);
           break;
         case '4':
@@ -284,7 +285,7 @@ void main() {
           print('Gracias por usar BancoVipe. ¡Adiós!');
           return;
         default:
-          print('Opción no válido')
+          print('Opción no válido');
       }
 
     }on CuentaNoExisteException catch (e) {
